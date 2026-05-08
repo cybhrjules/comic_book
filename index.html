@@ -98,18 +98,30 @@
   }
   .cover-title {
     font-family: 'Bangers', cursive;
-    font-size: clamp(36px, 8vw, 64px);
-    color: var(--yellow);
+    font-size: clamp(24px, 6vw, 48px);
+    color: rgba(255,215,0,0.9);
     letter-spacing: 3px;
-    text-shadow: 4px 4px 0 #8B6914;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
     line-height: 1;
     margin-bottom: 8px;
+    opacity: 0.85;
   }
   .cover-subtitle {
     font-family: 'Fredoka One', cursive;
-    color: #9ef0c0;
-    font-size: 18px;
+    color: rgba(158,240,192,0.9);
+    font-size: 14px;
     margin-bottom: 24px;
+    opacity: 0.85;
+  }
+  .cover-photo {
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    margin: 0 auto 24px;
+    display: block;
+    border-radius: 18px;
+    border: 3px solid rgba(255,255,255,0.85);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
   }
   .cover-characters {
     display: flex;
@@ -228,6 +240,38 @@
     justify-content: center;
     font-size: 24px;
     box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+  }
+  .scene-photo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 3px solid rgba(255,255,255,0.85);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    margin-top: 12px;
+  }
+  .rule-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #333;
+    flex-shrink: 0;
+  }
+  .panel-image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .panel-image-row img {
+    width: calc(50% - 10px);
+    max-width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.9);
   }
   .char-label {
     font-family: 'Fredoka One', cursive;
@@ -420,7 +464,6 @@
     gap: 12px;
   }
   .page-banner-icon { font-size: 36px; }
-  .page-banner-text {}
   .page-banner-num {
     font-family: 'Bangers', cursive;
     font-size: 13px;
@@ -549,31 +592,9 @@
 <!-- ═══════════════════════════════════════════ -->
 <div class="page active" id="page-0">
   <div class="cover">
-    <div class="cover-bats">🦇🦇🦇</div>
     <div class="cover-title">LIVING SAFELY<br>WITH BATS!</div>
     <div class="cover-subtitle">A One Health Comic Book for Young Learners 🌿</div>
-    <div class="cover-characters">
-      <div class="cover-char">
-        <div class="char-avatar" style="background:#4FC3F7">👧🏾</div>
-        <div class="char-name">Ishimwe</div>
-      </div>
-      <div class="cover-char">
-        <div class="char-avatar" style="background:#81C784">👦🏾</div>
-        <div class="char-name">Kalisa</div>
-      </div>
-      <div class="cover-char">
-        <div class="char-avatar" style="background:#FFB74D">👧🏽</div>
-        <div class="char-name">Mutesi</div>
-      </div>
-      <div class="cover-char">
-        <div class="char-avatar" style="background:#CE93D8">👨🏾‍🔬</div>
-        <div class="char-name">Mr. Habimana</div>
-      </div>
-      <div class="cover-char">
-        <div class="char-avatar" style="background:#EF9A9A">👩🏾‍🏫</div>
-        <div class="char-name">Madam Uwimana</div>
-      </div>
-    </div>
+    <img class="cover-photo" src="Pictures for comic book/Conservation team.png" alt="Conservation team at the cover page">
     <div class="cover-rwca">
       Inspired by the <strong>One Health</strong> approach · Rwanda Wildlife Conservation Association
     </div>
@@ -598,40 +619,30 @@
     <!-- Panel 1 - Field trip -->
     <div class="panel wide">
       <div class="panel-header green">🌳 The Field Trip Begins!</div>
-      <div class="scene scene-forest" style="min-height:180px;">
+      <div class="scene scene-forest" style="padding:16px 16px 12px;">
         <div class="sfx sfx-wow">WOW!</div>
         <div class="bubble-wrap">
           <div class="speaker">Madam Uwimana 👩🏾‍🏫</div>
-          <div class="bubble say">Children, today we visit a nature reserve near the lake. Keep your eyes open! 👀</div>
+          <div class="bubble say">Children, today we visit a nature reserve near the lake. Keep your eyes open!</div>
         </div>
-        <div style="display:flex; align-items:flex-end; gap:16px; margin-top:auto; flex-wrap:wrap;">
-          <div class="char">
-            <div class="char-body" style="background:#4FC3F7">👧🏾</div>
-            <div class="char-label">Ishimwe</div>
-          </div>
-          <div class="char">
-            <div class="char-body" style="background:#81C784">👦🏾</div>
-            <div class="char-label">Kalisa</div>
-          </div>
-          <div class="char">
-            <div class="char-body" style="background:#FFB74D">👧🏽</div>
-            <div class="char-label">Mutesi</div>
-          </div>
-          <span style="font-size:36px; margin-left:auto;">🌳🌴🌳</span>
+        <div>
+          <img class="scene-photo" src="Pictures for comic book/Class visiting nature reserve.png" alt="Class visiting nature reserve">
         </div>
       </div>
     </div>
 
     <!-- Panel 2 - Scared -->
     <div class="panel">
-      <div class="panel-header red">😱 Bats in the Tree!</div>
+      <div class="panel-header red">😱 Bats from the cave!</div>
       <div class="scene scene-sky" style="min-height:200px;">
         <div class="sfx sfx-eek">EEK!</div>
         <div class="bubble-wrap">
           <div class="speaker">Ishimwe 👧🏾</div>
           <div class="bubble say danger">I'm scared! Are those bats <b>DANGEROUS?!</b> 😱</div>
         </div>
-        <div style="margin-top:auto; text-align:center; font-size:32px;">🌳🦇🦇🦇</div>
+        <div style="margin-top:auto;">
+          <img class="scene-photo" src="Pictures for comic book/I'am scared of bats (3).png" alt="Child afraid of bats">
+        </div>
       </div>
     </div>
 
@@ -639,13 +650,8 @@
     <div class="panel">
       <div class="panel-header purple">🔬 Mr. Habimana Explains!</div>
       <div class="scene scene-field" style="min-height:200px;">
-        <div class="bubble-wrap">
-          <div class="speaker">Mr. Habimana 👨🏾‍🔬</div>
-          <div class="bubble say info">Don't be afraid — but <b>don't touch them!</b> These bats are some of the most <b>important animals</b> on Earth! 🌍</div>
-        </div>
-        <div style="margin-top:auto;" class="char">
-          <div class="char-body" style="background:#CE93D8">👨🏾‍🔬</div>
-          <div class="char-label">Mr. Habimana</div>
+        <div style="margin-top:auto;">
+          <img class="scene-photo" src="Pictures for comic book/Don't touch the bats.png" alt="Don't touch the bats warning">
         </div>
       </div>
     </div>
@@ -653,34 +659,18 @@
     <!-- Panel 4 - Benefits grid -->
     <div class="panel wide">
       <div class="panel-header green">🦸 Bats Are SUPERHEROES of Nature!</div>
-      <div class="rules-grid">
-        <div class="rule-card tip">
-          <div class="rule-icon">🐛</div>
-          <div>
-            <strong>Pest Control!</strong><br>
-            One bat eats over <strong>1,000 insects</strong> in ONE hour — including mosquitoes that spread malaria! 🦟
-          </div>
+      <div style="display:flex; flex-direction:column; gap:0; padding:0;">
+        <div style="width:100%;">
+          <img class="scene-photo" style="border-radius:0; border-left:0; border-right:0; border-top:0;" src="Pictures for comic book/Rhinolophus eating insects.png" alt="Rhinolophus eating insects">
         </div>
-        <div class="rule-card tip">
-          <div class="rule-icon">🌱</div>
-          <div>
-            <strong>Seed Dispersal!</strong><br>
-            Fruit bats spread seeds of <strong>500+ plant species</strong> — helping forests grow! 🌳
-          </div>
+        <div style="width:100%;">
+          <img class="scene-photo" style="border-radius:0; border-left:0; border-right:0; border-top:0;" src="Pictures for comic book/Seed dispersal (1).png" alt="Seed dispersal by bats">
         </div>
-        <div class="rule-card tip">
-          <div class="rule-icon">🌺</div>
-          <div>
-            <strong>Pollination!</strong><br>
-            Bats pollinate <strong>300+ fruit plants</strong> including wild bananas! 🍌
-          </div>
+        <div style="width:100%;">
+          <img class="scene-photo" style="border-radius:0; border-left:0; border-right:0; border-top:0;" src="Pictures for comic book/Pollination of wild banana.png" alt="Bat pollinating wild bananas">
         </div>
-        <div class="rule-card tip">
-          <div class="rule-icon">💩</div>
-          <div>
-            <strong>Natural Fertiliser!</strong><br>
-            Bat droppings (guano) help plants grow — but handle with care! ⚠️
-          </div>
+        <div style="width:100%;">
+          <img class="scene-photo" style="border-radius:0; border-left:0; border-right:0; border-top:0;" src="Pictures for comic book/Guano as a nature fertilizer.png" alt="Bat guano used as fertilizer">
         </div>
       </div>
     </div>
@@ -689,21 +679,8 @@
     <div class="panel wide">
       <div class="panel-header blue">🔗 The One Health Connection</div>
       <div class="scene scene-yellow" style="padding:16px;">
-        <div style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; align-items:center;">
-          <div style="text-align:center; background:#E3F2FD; border:2px solid #1565C0; border-radius:8px; padding:12px 16px;">
-            <div style="font-size:28px;">🧑‍⚕️</div>
-            <div style="font-family:'Fredoka One'; color:#1565C0; font-size:13px;">Human Health</div>
-          </div>
-          <div style="font-family:'Bangers'; font-size:24px; color:var(--purple);">⟺</div>
-          <div style="text-align:center; background:#E8F5E9; border:2px solid var(--green); border-radius:8px; padding:12px 16px;">
-            <div style="font-size:28px;">🦇</div>
-            <div style="font-family:'Fredoka One'; color:var(--green); font-size:13px;">Animal Health</div>
-          </div>
-          <div style="font-family:'Bangers'; font-size:24px; color:var(--purple);">⟺</div>
-          <div style="text-align:center; background:#FFF8E7; border:2px solid var(--orange); border-radius:8px; padding:12px 16px;">
-            <div style="font-size:28px;">🌳</div>
-            <div style="font-family:'Fredoka One'; color:var(--orange); font-size:13px;">Environment</div>
-          </div>
+        <div style="margin-top:auto;">
+          <img class="scene-photo" src="Pictures for comic book/one health connection.png" alt="One Health connection between humans, animals, and environment">
         </div>
         <div style="text-align:center; margin-top:12px; font-size:13px; color:#333; line-height:1.5;">
           When bats are healthy → forests grow → insects are controlled → <strong>we are healthier too!</strong>
@@ -769,13 +746,8 @@
     <!-- Panel - Rule 1 -->
     <div class="panel">
       <div class="panel-header red">🚫 RULE 1</div>
-      <div class="scene scene-danger" style="min-height:160px;">
-        <div class="sfx sfx-eek">NO!</div>
-        <div class="bubble" style="background:#FFEBEE; border-color:var(--red); font-size:12px;">
-          <strong>NEVER Touch a Bat! 🦇</strong><br><br>
-          Even if it looks cute, hurt, or dead — <b>NEVER pick it up</b> with bare hands! Only trained wildlife experts with thick gloves should handle bats.
-        </div>
-        <div style="text-align:center; font-size:40px; margin-top:8px;">🙅🏾❌🦇</div>
+      <div class="scene scene-danger" style="min-height:160px; padding:0;">
+        <img class="scene-photo" style="border-radius:0; border:0;" src="Pictures for comic book/Warning to not touch bats.png" alt="Warning not to touch bats">
       </div>
     </div>
 
@@ -795,12 +767,8 @@
     <!-- Panel - Rule 3 -->
     <div class="panel">
       <div class="panel-header orange">🍎 RULE 3</div>
-      <div class="scene scene-danger" style="min-height:160px;">
-        <div class="bubble" style="background:#FFF3E0; border-color:var(--orange); font-size:12px;">
-          <strong>Don't Eat Bat-Bitten Fruit! 🍎</strong><br><br>
-          If you find fruit with <b>bite marks on the ground</b> — do NOT eat it! Bat saliva on fruit can carry germs. Only eat <b>clean, undamaged fruit!</b>
-        </div>
-        <div style="text-align:center; font-size:36px; margin-top:8px;">🍎❌ → 🍊✅</div>
+      <div class="scene scene-danger" style="min-height:160px; padding:0;">
+        <img class="scene-photo" style="border-radius:0; border:0;" src="Pictures for comic book/fruit eaten by bat.png" alt="Don't eat bat-bitten fruit">
       </div>
     </div>
 
@@ -819,15 +787,8 @@
     <!-- Panel - Rule 5 - full width -->
     <div class="panel wide">
       <div class="panel-header red">🏥 RULE 5 — MOST IMPORTANT!</div>
-      <div class="scene scene-danger" style="min-height:100px; flex-direction:row; align-items:center; gap:16px; flex-wrap:wrap;">
-        <div style="font-size:48px;">🏃🏾</div>
-        <div style="flex:1; min-width:200px;">
-          <div class="bubble warning" style="font-size:13px;">
-            <strong>🚨 Seek Medical Help IMMEDIATELY! 🚨</strong><br>
-            If a bat bites or scratches anyone — tell an adult and go to a health worker or clinic <b>THE SAME DAY!</b> Doctors can give medicine that prevents serious illness. <b>Do NOT wait!</b>
-          </div>
-        </div>
-        <div style="font-size:48px;">🏥</div>
+      <div class="scene scene-danger" style="min-height:100px; padding:0;">
+        <img class="scene-photo" style="border-radius:0; border:0;" src="Pictures for comic book/Seeking medical help.png" alt="Seeking medical help after a bat bite">
       </div>
     </div>
 
@@ -862,11 +823,8 @@
           <div class="speaker">Mutesi 👧🏽</div>
           <div class="bubble say">Sometimes we find <b>dead bats</b> near our homes. What should we do?! 😟</div>
         </div>
-        <div style="margin-top:auto; display:flex; gap:12px; align-items:flex-end;">
-          <div class="char">
-            <div class="char-body" style="background:#FFB74D">👧🏽</div>
-            <div class="char-label">Mutesi</div>
-          </div>
+        <div style="margin-top:auto;">
+          <img class="scene-photo" src="Pictures for comic book/I'am scared of bat.png" alt="Child asking about dead bats">
         </div>
       </div>
     </div>
@@ -874,6 +832,9 @@
     <!-- Dead bat steps -->
     <div class="panel">
       <div class="panel-header orange">☠️ How to Handle Dead Bats</div>
+      <div style="margin-top:12px;">
+        <img class="scene-photo" src="Pictures for comic book/Handling a dead bat.png" alt="How to handle a dead bat safely">
+      </div>
       <div class="rules-grid" style="grid-template-columns:1fr;">
         <div class="rule-card do">
           <div class="rule-num green">1</div>
@@ -911,6 +872,9 @@
     <!-- Bat in home - DO/DON'T -->
     <div class="panel wide">
       <div class="panel-header orange">🦇 A Bat Flew Into Your Home! What Do You Do?</div>
+      <div style="margin-top:12px;">
+        <img class="scene-photo" src="Pictures for comic book/When a bat enters a house.png" alt="A bat entering a house">
+      </div>
       <div class="compare-grid">
         <div class="compare-side do">
           <div class="compare-title do">✅ DO THIS!</div>
@@ -1032,6 +996,9 @@
     <!-- Cave visit safety -->
     <div class="panel wide">
       <div class="panel-header" style="background:var(--brown); color:white;">🪨 Visiting Bat Caves? Stay Safe!</div>
+      <div style="margin-top:12px;">
+        <img class="scene-photo" src="Pictures for comic book/Visiting cave.png" alt="Visitors at a bat cave">
+      </div>
       <div class="scene scene-cave" style="min-height:120px;">
         <div class="bubble info" style="font-size:12px;">
           <strong>Before entering any bat cave:</strong> Put on a <b>face mask (N95 if possible)</b>, gloves, long sleeves, long trousers, and closed shoes. Stay as short a time as possible inside!
@@ -1103,6 +1070,9 @@
     <!-- Why protect -->
     <div class="panel">
       <div class="panel-header green">🌍 Why We Must Protect Bats!</div>
+      <div style="margin-top:12px;">
+        <img class="scene-photo" src="Pictures for comic book/Class visiting nature reserve.png" alt="Class learning about bat conservation">
+      </div>
       <div style="padding:12px; display:flex; flex-direction:column; gap:8px;">
         <div class="fact-card">
           <div class="fact-icon">🤝</div>
