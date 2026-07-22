@@ -1040,10 +1040,10 @@
 <script>
 const pages = document.querySelectorAll('.page');
 const navBtns = document.querySelectorAll('.nav-btn');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const pageIndicator = document.getElementById('page-indicator');
 let current = 0;
+let prevBtn;
+let nextBtn;
+let pageIndicator;
 
 function updateNavigation() {
   navBtns.forEach((btn, i) => btn.classList.toggle('active', i === current));
@@ -1061,7 +1061,18 @@ function goPage(n) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-updateNavigation();
+function initNavigation() {
+  prevBtn = document.getElementById('prevBtn');
+  nextBtn = document.getElementById('nextBtn');
+  pageIndicator = document.getElementById('page-indicator');
+  updateNavigation();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initNavigation);
+} else {
+  initNavigation();
+}
 
 function answer(btn, correct) {
   const parent = btn.closest('.quiz-q');
