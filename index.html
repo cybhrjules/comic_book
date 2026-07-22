@@ -66,9 +66,40 @@
   .nav-btn.active { background: var(--green); color: white; }
 
   /* ── PAGES ── */
-  .page { display: none; padding: 16px; max-width: 860px; margin: 0 auto; }
+  .book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0 32px;
+  }
+
+  .page {
+    display: none;
+    position: relative;
+    width: min(920px, calc(100% - 24px));
+    padding: 0 24px 24px;
+    margin: 0 auto 16px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+  }
   .page.active { display: block; animation: pageIn 0.3s ease; }
   @keyframes pageIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+
+  @media print {
+    body { background: white; }
+    .nav, .bottom-nav, .start-btn, .nav-btns { display: none !important; }
+    .page {
+      width: 100% !important;
+      padding: 0 !important;
+      margin: 0 0 12px !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: white !important;
+    }
+  }
 
   /* ── COVER ── */
   .cover {
@@ -590,7 +621,7 @@
     <button class="nav-btn" onclick="goPage(1)">1 · Why Bats?</button>
     <button class="nav-btn" onclick="goPage(2)">2 · Safety Rules</button>
     <button class="nav-btn" onclick="goPage(3)">3 · Dead Bats</button>
-    <button class="nav-btn" onclick="goPage(4)">4 · In Your Home</button>
+    <button class="nav-btn" onclick="goPage(4)">4 · Home Safety</button>
     <button class="nav-btn" onclick="goPage(5)">5 · Promise</button>
     <button class="nav-btn" onclick="goPage(6)">6 · Fun Facts</button>
   </div>
@@ -604,8 +635,8 @@
     <div class="cover-title">LIVING SAFELY<br>WITH BATS!</div>
     <div class="cover-subtitle">A One Health Comic Book for Young Learners 🌿</div>
     <div class="cover-photos">
-      <img class="cover-photo" src="Pictures for comic book/Conservation team (1).png" alt="conservation team (1)">
-      <img class="cover-photo" src="Pictures for comic book/Rhinolophus eating insects (1).png" alt="Rhinolophus eating insects showing the bat species we are conserving">
+      <img class="cover-photo" src="Pictures for comic book/Conservation team (1).png" alt="Our bats conservation team at the cover page">
+      <img class="cover-photo" src="Pictures for comic book/Rhinolophus eating insects.png" alt="Rhinolophus eating insects showing the bat species we are conserving">
     </div>
     <div class="cover-rwca">
       Inspired by the <strong>One Health</strong> approach · Rwanda Wildlife Conservation Association
@@ -634,7 +665,7 @@
       <div class="scene scene-forest" style="padding:16px 16px 12px;">
         <div class="sfx sfx-wow">WOW!</div>
         <div>
-          <img class="scene-photo" src="Pictures for comic book/Class visiting nature reserve bat trail (1).png" alt="Class visiting nature reserve bat trail">
+          <img class="scene-photo" src="Pictures for comic book/Class visiting nature reserve.png" alt="Class visiting nature reserve bat trail">
         </div>
       </div>
     </div>
@@ -679,11 +710,6 @@
 
   </div><!-- end grid -->
 
-  <div class="bottom-nav">
-    <button class="bnav-btn" onclick="goPage(0)">◀ COVER</button>
-    <div class="page-indicator">Chapter 1 of 6</div>
-    <button class="bnav-btn" onclick="goPage(2)">NEXT ▶</button>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -715,7 +741,7 @@
     <div class="panel">
       <div class="panel-header red">🚫 RULE 1: Never Touch Bats!</div>
       <div class="scene scene-danger" style="min-height:160px; padding:0;">
-        <img class="scene-photo" style="border-radius:0; border:0;" src="Pictures for comic book/Warning to not touch bats.png" alt="Warning not to touch bats">
+        <img class="scene-photo" style="border-radius:0; border:0;" src="Pictures for comic book/Warning not to touch bats.png" alt="Warning not to touch bats">
       </div>
     </div>
 
@@ -753,22 +779,17 @@
 
   </div>
 
-  <div class="bottom-nav">
-    <button class="bnav-btn" onclick="goPage(1)">◀ BACK</button>
-    <div class="page-indicator">Chapter 2 of 6</div>
-    <button class="bnav-btn" onclick="goPage(3)">NEXT ▶</button>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 3 — DEAD BATS & HOME -->
+<!-- PAGE 3 — DEAD BATS -->
 <!-- ═══════════════════════════════════════════ -->
 <div class="page" id="page-3">
   <div class="page-banner">
-    <div class="page-banner-icon">🏠</div>
+    <div class="page-banner-icon">⚠️</div>
     <div class="page-banner-text">
       <div class="page-banner-num">CHAPTER 3</div>
-      <div class="page-banner-title">Dead Bats & Bats in Your Home!</div>
+      <div class="page-banner-title">What to Do When You Find a Dead Bat</div>
     </div>
   </div>
 
@@ -779,29 +800,52 @@
       <div class="panel-header purple">❓ Mutesi's Question!</div>
       <div class="scene scene-field" style="min-height:120px;">
         <div class="bubble-wrap">
-          
-        <img class="scene-photo" src="Pictures for comic book/If a dead bat is found.png" alt="Child asking about dead bats">
+          <img class="scene-photo" src="Pictures for comic book/If a dead bat is found (1).png" alt="Child asking about dead bats">
         </div>
       </div>
     </div>
 
     <!-- Dead bat steps -->
-    
-
-    <!-- Warning box -->
-  
-
-    <!-- Bat in home - DO/DON'T -->
     <div class="panel wide">
-      <div class="panel-header orange">🦇 A Bat Flew Into Your Home! What Do You Do?</div>
-      <div class="scene scene-field" style="min-height:120px;">
-        <div class="bubble-wrap">
-          <img class="scene-photo" src="Pictures for comic book/Bat enters home.png" alt="When a bat enters your home" style="max-width:100%; height:auto; object-fit:contain; display:block; border-radius:8px; border:0;" />
-        </div>
+    
       </div>
     </div>
 
-    <!-- Bats in roof -->
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PAGE 4 — HOME SAFETY -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page" id="page-4">
+  <div class="page-banner">
+    <div class="page-banner-icon">🏠</div>
+    <div class="page-banner-text">
+      <div class="page-banner-num">CHAPTER 4</div>
+      <div class="page-banner-title">Bats Around Your Home</div>
+    </div>
+  </div>
+
+  <div class="comic-grid">
+
+    <!-- Home entry safety -->
+    <div class="panel wide">
+      <div class="panel-header orange">🦇 A Bat Flew Into Your Home! What Do You Do?</div>
+      <div class="scene scene-field" style="min-height:160px; display:flex; align-items:center; justify-content:center; padding:12px;">
+        <img class="scene-photo" src="Pictures for comic book/Bat enters home.png" alt="When a bat enters your home" style="max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" />
+      </div>
+    </div>
+
+    <!-- Home area safety -->
+    <div class="panel wide">
+      <div class="panel-header green">🌿 Keep Your Yard and Food Safe!</div>
+      <div class="scene scene-home" style="min-height:160px; display:flex; align-items:center; justify-content:center; padding:12px;">
+        <img class="scene-photo" src="Pictures for comic book/Keep yard safe.png" alt="Keep your yard and home safe from bats" style="max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" />
+      </div>
+    </div>
+
+    <!-- Roof colony tips -->
     <div class="panel wide">
       <div class="panel-header purple">🏠 Bats Living in Your Roof? Here's What to Do!</div>
       <div style="padding:12px;">
@@ -828,59 +872,6 @@
 
   </div>
 
-  <div class="bottom-nav">
-    <button class="bnav-btn" onclick="goPage(2)">◀ BACK</button>
-    <div class="page-indicator">Chapter 3 of 6</div>
-    <button class="bnav-btn" onclick="goPage(4)">NEXT ▶</button>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- PAGE 4 — OUTDOOR & GUANO SAFETY -->
-<!-- ═══════════════════════════════════════════ -->
-<div class="page" id="page-4">
-  <div class="page-banner">
-    <div class="page-banner-icon">🌳</div>
-    <div class="page-banner-text">
-      <div class="page-banner-num">CHAPTER 4</div>
-      <div class="page-banner-title">Outdoor Safety & Bat Droppings!</div>
-    </div>
-  </div>
-
-  <div class="comic-grid">
-
-    <!-- Outdoor safety -->
-    <div class="panel wide">
-      <div class="panel-header grey">🌿 Keep Your Outdoor Space Safe!</div>
-      <div class="scene scene-field" style="min-height:120px;">
-        <div class="bubble-wrap">
-          <img class="scene-photo" src="Pictures for comic book/Keep outdoor safe.png" alt="When a bat enters your home" style="max-width:100%; height:auto; object-fit:contain; display:block; border-radius:8px; border:0;" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Guano panel -->
-    
-
-    <!-- Cave visit safety -->
-    <div class="panel wide">
-      <div class="panel-header grey">🌿 Visiting bat caves? Stay safe!</div>
-      <div class="scene scene-field" style="min-height:120px;">
-        <div class="bubble-wrap">
-          <img class="scene-photo" src="Pictures for comic book/Visiting a bat cave.png" alt="When a bat enters your home" style="max-width:100%; height:auto; object-fit:contain; display:block; border-radius:8px; border:0;" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Scene: Ishimwe now understands -->
-
-  </div>
-
-  <div class="bottom-nav">
-    <button class="bnav-btn" onclick="goPage(3)">◀ BACK</button>
-    <div class="page-indicator">Chapter 4 of 6</div>
-    <button class="bnav-btn" onclick="goPage(5)">NEXT ▶</button>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -949,11 +940,6 @@
 
   </div>
 
-  <div class="bottom-nav">
-    <button class="bnav-btn" onclick="goPage(4)">◀ BACK</button>
-    <div class="page-indicator">Chapter 5 of 6</div>
-    <button class="bnav-btn" onclick="goPage(6)">NEXT ▶</button>
-  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -1012,11 +998,6 @@
     </div>
   </div>
 
-  <div class="bottom-nav">
-    <button class="bnav-btn" onclick="goPage(5)">◀ BACK</button>
-    <div class="page-indicator">Bonus Chapter!</div>
-    <button class="bnav-btn" onclick="goPage(0)">🏠 COVER</button>
-  </div>
 </div>
 
 <style>
